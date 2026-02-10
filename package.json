@@ -1,0 +1,27 @@
+{
+  "name": "@openclaw/custom-discord",
+  "version": "1.0.0",
+  "description": "Custom Discord channel with proxy support for OpenClaw",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "link": "ln -sf $(pwd) ~/.openclaw/extensions/custom-discord"
+  },
+  "dependencies": {
+    "https-proxy-agent": "^7.0.0",
+    "socks-proxy-agent": "^8.0.0",
+    "ws": "^8.19.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/ws": "^8.5.0",
+    "typescript": "^5.9.3"
+  },
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ]
+  }
+}

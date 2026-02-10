@@ -1,0 +1,8 @@
+{
+  "id": "discord-custom",
+  "name": "Discord (Custom)",
+  "description": "Custom Discord channel implementation with proxy support",
+  "version": "1.0.0",
+  "type": "channel",
+  "entry": "./dist/index.js"
+}
