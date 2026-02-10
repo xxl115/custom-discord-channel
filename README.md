@@ -164,21 +164,25 @@ cd /home/young/code/custom-discord-channel
 # 2. 安装依赖
 npm install
 
-# 3. 创建OpenClaw扩展目录
+# 3. 配置环境变量
+export DISCORD_BOT_TOKEN=your_bot_token_here
+export DISCORD_PROXY_URL=socks5://127.0.0.1:7891
+
+# 4. 创建OpenClaw扩展目录
 mkdir -p ~/.openclaw/extensions
 
-# 4. 创建符号链接
+# 5. 创建符号链接
 ln -sf $(pwd)/index.js ~/.openclaw/extensions/discord-custom.js
 
-# 5. 配置mihomo添加SOCKS5端口
+# 6. 配置mihomo添加SOCKS5端口
 # 编辑 /home/young/clash-meta.yaml
 port: 7890
 socks-port: 7891  # 添加这行
 
-# 6. 重启mihomo
+# 7. 重启mihomo
 pkill -HUP mihomo
 
-# 7. 重启OpenClaw
+# 8. 重启OpenClaw
 ~/bin/ocw
 ```
 
@@ -186,6 +190,8 @@ pkill -HUP mihomo
 
 ```bash
 # 运行测试
+export DISCORD_BOT_TOKEN=your_bot_token_here
+export DISCORD_PROXY_URL=socks5://127.0.0.1:7891
 node test-gateway.js
 ```
 
